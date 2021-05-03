@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.mogasup.mapper.NoticeMapper">
+	
+	<insert id="insert" parameterType="Notice">
+		insert into notice values(null, #{family_id}, #{user_id}, #{name}, #{content}, now())
+  	</insert>
+  	
+  	<delete id="delete" parameterType="int">
+    	delete from notice where notice_id = #{notice_id}
+	</delete>
+	
+	<select id="find" resultType="Notice">
+		select * from notice where family_id=#{family_id}
+	</select>
+	
+	<update id="update">
+    	update notice set name=#{name}, content=#{content} where notice_id = #{notice_id}
+	</update>
+	
+	<select id="getNickname" resultType="String">
+		select nickname from user where user_id=#{user_id}
+	</select>
+  	
+</mapper>
