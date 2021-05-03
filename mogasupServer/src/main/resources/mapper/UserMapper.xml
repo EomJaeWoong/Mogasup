@@ -4,6 +4,16 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.ssafy.mogasup.mapper.UserMapper">
+	<insert id="signup" parameterType="User">
+		insert into user values(null, #{email}, #{nickname}, #{password})
+  	</insert>
+  	
+  	<select id="findByEmail" resultType="User">
+		select * from user where email=#{email}
+	</select>
 	
+  	<select id="login" resultType="User">
+		select * from user where email=#{email} and password=#{password}
+	</select>
   	
 </mapper>
