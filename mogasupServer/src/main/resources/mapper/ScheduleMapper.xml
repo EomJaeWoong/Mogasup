@@ -6,7 +6,7 @@
 <mapper namespace="com.ssafy.mogasup.mapper.ScheduleMapper">
 	
 	<insert id="insert" parameterType="Schedule">
-		insert into schedule values(null, #{family_id}, #{user_id}, #{name}, #{content})
+		insert into schedule values(null, #{family_id}, #{user_id}, #{name}, #{content}, now())
   	</insert>
   	
   	<delete id="delete" parameterType="int">

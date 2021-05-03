@@ -57,12 +57,13 @@ public class ScheduleController {
 			List<Map<String, String>> tmp = new ArrayList<Map<String,String>>();
 			for (Schedule schedule : list) {
 				Map<String, String> map = new HashMap<String, String>();
-				map.put("schedule_id", Integer.toString(schedule.getSchdule_id()));
+				map.put("schedule_id", Integer.toString(schedule.getSchedule_id()));
 				map.put("user_id", Integer.toString(schedule.getUser_id()));
 				map.put("family_id", Integer.toString(schedule.getFamily_id()));
 				map.put("name", schedule.getName());
 				map.put("content", schedule.getContent());
 				map.put("nickname", service.getNickname(schedule.getUser_id()));
+				map.put("date", schedule.getDate());
 				tmp.add(map);
 			}
 			result.result = tmp;

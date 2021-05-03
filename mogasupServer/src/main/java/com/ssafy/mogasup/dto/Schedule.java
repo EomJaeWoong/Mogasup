@@ -6,15 +6,16 @@ public class Schedule {
 	private int user_id;
 	private String name;
 	private String content;
+	private String date;
 	
 	public Schedule() {
 	}
 
-	public int getSchdule_id() {
+	public int getSchedule_id() {
 		return schedule_id;
 	}
 
-	public void setSchdule_id(int schdule_id) {
+	public void setSchedule_id(int schdule_id) {
 		this.schedule_id = schdule_id;
 	}
 
@@ -49,6 +50,13 @@ public class Schedule {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
 	
 }
