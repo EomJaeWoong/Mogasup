@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.mogasup.mapper.ScheduleMapper">
+	
+	<insert id="insert" parameterType="Schedule">
+		insert into schedule values(null, #{family_id}, #{user_id}, #{name}, #{content})
+  	</insert>
+  	
+  	<delete id="delete" parameterType="int">
+    	delete from schedule where schedule_id = #{schedule_id}
+	</delete>
+	
+	<select id="find" resultType="Schedule">
+		select * from schedule where family_id=#{family_id}
+	</select>
+	
+	<update id="update">
+    	update schedule set name=#{name}, content=#{content} where schedule_id = #{schedule_id}
+	</update>
+	
+	<select id="getNickname" resultType="String">
+		select nickname from user where user_id=#{user_id}
+	</select>
+  	
+</mapper>
