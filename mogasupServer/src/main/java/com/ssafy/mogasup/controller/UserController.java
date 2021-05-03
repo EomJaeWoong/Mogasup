@@ -22,7 +22,6 @@ public class UserController {
 	
 	@PostMapping(value = "/user")
 	@ApiOperation(value = "회원가입", notes = "성공 시 회원가입 완료")
-	
 	public Object insertUser(@RequestParam String email, @RequestParam String nickname, @RequestParam String password) {
 		BasicResponse result = new BasicResponse();
 		HttpStatus status;
@@ -47,7 +46,6 @@ public class UserController {
 	
 	@PostMapping(value = "/user/login")
 	@ApiOperation(value = "login", notes = "성공 시 login 완료")
-	
 	public Object login(@RequestParam String email, @RequestParam String password) {
 		BasicResponse result = new BasicResponse();
 		HttpStatus status;
