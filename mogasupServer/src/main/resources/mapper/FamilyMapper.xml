@@ -19,4 +19,16 @@
   	<select id="familyList" resultType="Family">
   		select family_id, name from family where family_id in (select family_id from user_family where user_id=#{user_id})
   	</select>
+  	
+  	<select id="familyMemberList" resultType="java.util.Map">
+  		select user_id, email, nickname from user where user_id in (select user_id from user_family where family_id=#{family_id})
+  	</select>
+  	
+  	<delete id="deleteFamily">
+  		delete from family where family_id=#{family_id}
+  	</delete>
+  	
+  	<delete id="deleteFamilyMember">
+  		delete from user_family where user_id=#{user_id} and family_id=#{family_id}
+  	</delete>
 </mapper>
