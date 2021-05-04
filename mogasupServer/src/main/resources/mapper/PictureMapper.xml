@@ -7,4 +7,16 @@
 	<insert id="insertImage">
 		insert into picture values(null, #{family_id}, #{image_path})
 	</insert>
+	
+	<delete id="deleteImage">
+		delete from picture where picture_id=#{picture_id}
+	</delete>
+	
+	<select id="listImage" resultType="java.util.Map">
+		select picture_id, image_path from picture where family_id=#{family_id}
+	</select>
+	
+	<select id="readImage" resultType="String">
+		select image_path from picture where picture_id=#{picture_id}
+	</select>
 </mapper>

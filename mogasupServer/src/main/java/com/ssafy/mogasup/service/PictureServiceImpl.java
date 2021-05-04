@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,6 +43,21 @@ public class PictureServiceImpl implements PictureService{
 	@Override
 	public void insertImage(int family_id, String image_path) {
 		dao.insertImage(family_id, image_path);
+	}
+
+	@Override
+	public void deleteImage(int picture_id) {
+		dao.deleteImage(picture_id);
+	}
+
+	@Override
+	public List<HashMap<String, String>> listImage(int family_id) {
+		return dao.listImage(family_id);
+	}
+
+	@Override
+	public String readImage(int picture_id) {
+		return dao.readImage(picture_id);
 	}
 	
 }
