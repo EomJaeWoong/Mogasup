@@ -60,11 +60,14 @@ public class UserController {
 			if(check!=null) {
 				result.message = "success";
 				Map<String, List<String>> map = new HashMap<String, List<String>>();
-				String user_id = service.findUserByEmail(email);
-				List<String> family_id = service.findFamilyByUserId(user_id);
-				List<String> tmp = new ArrayList<String>();
-				tmp.add(user_id);
-				map.put("user_id", tmp);
+				User user = service.findByEmail(email);
+				List<String> family_id = service.findFamilyByUserId(Integer.toString(user.getUser_id()));
+				List<String> user_id = new ArrayList<String>();
+				List<String> nickname = new ArrayList<String>();
+				user_id.add(Integer.toString(user.getUser_id()));
+				map.put("user_id", user_id);
+				nickname.add(user.getNickname());
+				map.put("nickname", nickname);
 				map.put("family_id", family_id);
 				result.result = map;
 			}
