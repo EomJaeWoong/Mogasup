@@ -1,5 +1,10 @@
 package com.ssafy.mogasup.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -54,6 +59,14 @@ public class UserController {
 			
 			if(check!=null) {
 				result.message = "success";
+				Map<String, List<String>> map = new HashMap<String, List<String>>();
+				String user_id = service.findUserByEmail(email);
+				List<String> family_id = service.findFamilyByUserId(user_id);
+				List<String> tmp = new ArrayList<String>();
+				tmp.add(user_id);
+				map.put("user_id", tmp);
+				map.put("family_id", family_id);
+				result.result = map;
 			}
 			else {	
 				result.message = "no exist email";
