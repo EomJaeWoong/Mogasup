@@ -1,5 +1,7 @@
 package com.ssafy.mogasup.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +28,13 @@ public class UserServiceImpl implements UserService{
 		return dao.login(email, password);
 	}
 	
+	@Override
+	public String findUserByEmail(String email) {
+		return dao.findUserByEmail(email);
+	}
 	
+	@Override
+	public List<String> findFamilyByUserId(String user_id) {
+		return dao.findFamilyByUserId(user_id);
+	}
 }
