@@ -49,5 +49,10 @@ public class FamilyDaoImpl implements FamilyDao{
 		mapper.deleteFamilyMember(user_id, family_id);
 	}
 
+	@Override
+	public String familyName(int family_id) {
+		return mapper.familyName(family_id);
+	}
+
 		
 }

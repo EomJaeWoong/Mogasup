@@ -132,5 +132,23 @@ public class FamilyController {
 		status= HttpStatus.ACCEPTED;
         return new ResponseEntity<>(result, status);
 	}
+	
+	@GetMapping(value = "/family/name/{family_id}")
+	@ApiOperation(value = "가족 이름", notes = "성공 시 가족 이름")
+	
+	public Object familyName(@PathVariable int family_id) {
+		BasicResponse result = new BasicResponse();
+		HttpStatus status;
+		try {
+			String name=service.familyName(family_id);
+			result.message = "success";
+			result.result=name;
+		} catch (Exception e) {
+			status=HttpStatus.INTERNAL_SERVER_ERROR;
+			e.printStackTrace();
+		}
+		status= HttpStatus.ACCEPTED;
+        return new ResponseEntity<>(result, status);
+	}
 }
 

@@ -49,6 +49,11 @@ public class FamilyServiceImpl implements FamilyService{
 		dao.deleteFamilyMember(user_id, family_id);
 	}
 
+	@Override
+	public String familyName(int family_id) {
+		return dao.familyName(family_id);
+	}
+
 	
 	
 }
