@@ -31,4 +31,8 @@
   	<delete id="deleteFamilyMember">
   		delete from user_family where user_id=#{user_id} and family_id=#{family_id}
   	</delete>
+  	
+  	<select id="familyName" resultType="String">
+  		select name from family where family_id=#{family_id}
+  	</select>
 </mapper>

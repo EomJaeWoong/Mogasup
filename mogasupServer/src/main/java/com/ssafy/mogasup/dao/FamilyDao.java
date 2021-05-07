@@ -13,4 +13,5 @@ public interface FamilyDao {
 	public List<HashMap<String, String>> familyMemberList(int family_id);
 	public void deleteFamily(int family_id);
 	public void deleteFamilyMember(int user_id, int family_id);
+	public String familyName(int family_id);
 }
