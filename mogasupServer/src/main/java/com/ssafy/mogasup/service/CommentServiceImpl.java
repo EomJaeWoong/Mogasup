@@ -19,7 +19,8 @@ public class CommentServiceImpl implements CommentService{
 	@Autowired
 	CommentDao dao;
 	
-	private final Path root = Paths.get("C:/Users/multicampus/Desktop");
+//	private final Path root = Paths.get("C:/Users/multicampus/Desktop");
+	private final Path root = Paths.get("/home/ubuntu/backend/");
 
 	@Override
 	public void init() {
@@ -35,7 +36,7 @@ public class CommentServiceImpl implements CommentService{
 	public void saveComment(MultipartFile file, String timeurl) {
 		try {
 //	    	System.out.println(this.root.resolve(file.getOriginalFilename())); //.\HBD.jpg
-			Files.copy(file.getInputStream(), this.root.resolve("picture/"+timeurl+".wav"));
+			Files.copy(file.getInputStream(), this.root.resolve("voice/"+timeurl+".wav"));
 		} catch (Exception e) {
 			throw new RuntimeException("Could not store the file. Error: " + e.getMessage());
 		}

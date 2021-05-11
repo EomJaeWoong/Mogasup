@@ -18,7 +18,8 @@ public class PictureServiceImpl implements PictureService{
 	@Autowired
 	PictureDao dao;
 	
-	private final Path root = Paths.get("C:/Users/multicampus/Desktop");
+//	private final Path root = Paths.get("C:/Users/multicampus/Desktop");
+	private final Path root = Paths.get("/home/ubuntu/backend/");
 
 	@Override
 	public void init() {
