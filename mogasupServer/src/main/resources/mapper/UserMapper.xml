@@ -20,7 +20,7 @@
 		select user_id from user where email=#{email}
 	</select>
 	
-	<select id="findFamilyByUserId" resultType="List">
+	<select id="findFamilyByUserId" resultType="String" >
 		select family_id from user_family where user_id=#{user_id}
 	</select>
   	
