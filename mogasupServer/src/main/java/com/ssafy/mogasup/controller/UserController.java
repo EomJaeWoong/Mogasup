@@ -75,18 +75,17 @@ public class UserController {
 				result.message = "success";
 				Map<String, String> map = new HashMap<String, String>();
 				User user = service.findByEmail(email);
-				List<String> family_id = service.findFamilyByUserId(Integer.toString(user.getUser_id()));
-				List<String> user_id = new ArrayList<String>();
-				List<String> nickname = new ArrayList<String>();
-				user_id.add(Integer.toString(user.getUser_id()));
-				map.put("user_id", user_id.get(0));
-				nickname.add(user.getNickname());
-				map.put("nickname", nickname.get(0));
+				String user_id = Integer.toString(user.getUser_id());
+				List<String> family_id = service.findFamilyByUserId(user_id);
+				map.put("user_id", user_id);
+				map.put("nickname", user.getNickname());
 				
-				if(family_id.size() == 0)
+				if(family_id.size() == 0) {
 					map.put("family_id", "0");
-				else
+				}
+				else {
 					map.put("family_id", family_id.get(0));
+				}
 				result.result = map;
 			}
 			else {	

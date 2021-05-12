@@ -2,6 +2,7 @@ package com.ssafy.mogasup.controller;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,6 +39,10 @@ public class FamilyController {
 			int family_id=service.findFamilyId();
 			service.createUserFamily(user_id, family_id);
 			result.message = "success";
+			String sfamily_id = Integer.toString(family_id);
+			
+			result.result = sfamily_id;
+
 		} catch (Exception e) {
 			status=HttpStatus.INTERNAL_SERVER_ERROR;
 			e.printStackTrace();
