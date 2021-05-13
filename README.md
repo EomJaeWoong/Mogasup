@@ -32,9 +32,9 @@
 
 # ⚙️ 개발환경
 
-<img src="./image/tech.jpg"></img>
+<img src="./image/tech.JPG"></img>
 
 # 🕹️주요 기능
 
-<img src="./image/flow.jpg"></img>
+<img src="./image/flow.JPG"></img>
 
