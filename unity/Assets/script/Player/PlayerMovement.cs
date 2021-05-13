@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     // 게임 오브젝트에 붙어있는 Animator 컴포넌트를 가져옴
     protected Animator avatar;
 
+    // 플레이어 근처의 오브젝트
+    GameObject nearObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,5 +53,36 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }        
+    }
+
+    // Trigger Event
+    void OnTriggerEnter(Collider other) {
+        if(other.tag == "photo") {
+            nearObject = other.gameObject;
+
+            // photolist script 불러오기
+            PhotoList photoList = nearObject.GetComponent<PhotoList>();
+            photoList.Enter(this);
+        } else if(other.tag == "board") {
+            nearObject = other.gameObject;
+
+            // boardlist script 불러오기
+            BoardList boardList = nearObject.GetComponent<BoardList>();
+            boardList.Enter(this);
+        }
+    }
+
+    void OntriggerExit(Collider other) {
+        if(other.tag == "photo") {
+            // photolist script 불러오기
+            PhotoList photoList = nearObject.GetComponent<PhotoList>();
+            photoList.Exit();
+            nearObject = null;
+        } else if(other.tag == "board") {
+            // boardlist script 불러오기
+            BoardList boardList = nearObject.GetComponent<BoardList>();
+            boardList.Exit();
+            nearObject = null;
+        }
     }
 }
