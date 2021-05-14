@@ -38,4 +38,9 @@ public class NoticeServiceImpl implements NoticeService {
 	public String getNickname(int user_id) {
 		return dao.getNickname(user_id);
 	}
+
+	@Override
+	public Notice read(int notice_id) {
+		return dao.read(notice_id);
+	}
 }

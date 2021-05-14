@@ -10,4 +10,5 @@ public interface NoticeService {
 	public List<Notice> find(int family_id);
 	public void update(Notice notice);
 	public String getNickname(int user_id);
+	public Notice read(int notice_id);
 }
