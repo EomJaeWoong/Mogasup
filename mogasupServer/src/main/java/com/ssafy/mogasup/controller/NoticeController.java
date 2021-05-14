@@ -119,7 +119,18 @@ public class NoticeController {
 		HttpStatus status;
 		try {
 			Notice notice=service.read(notice_id);
-			result.result = notice;
+//			System.out.println(notice);
+			String nickname=service.getNickname(notice.getUser_id());
+			Map<String, String> map = new HashMap<String, String>();
+			map.put("notice_id", Integer.toString(notice.getNotice_id()));
+			map.put("user_id", Integer.toString(notice.getUser_id()));
+			map.put("family_id", Integer.toString(notice.getFamily_id()));
+			map.put("name", notice.getName());
+			map.put("content", notice.getContent());
+			map.put("nickname", nickname);
+			map.put("date", notice.getDate());
+			System.out.println(map);
+			result.result = map;
 			result.message = "success";
 		}catch(Exception e) {
 			status=HttpStatus.INTERNAL_SERVER_ERROR;
