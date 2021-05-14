@@ -111,4 +111,22 @@ public class NoticeController {
 		status= HttpStatus.ACCEPTED;
         return new ResponseEntity<>(result, status);
 	}
+	
+	@GetMapping(value = "/notice/read/{notice_id}")
+	@ApiOperation(value = "공지 read", notes = "read 성공  success 실패  fail")
+	public Object readnotice(@PathVariable int notice_id) {
+		BasicResponse result = new BasicResponse();
+		HttpStatus status;
+		try {
+			Notice notice=service.read(notice_id);
+			result.result = notice;
+			result.message = "success";
+		}catch(Exception e) {
+			status=HttpStatus.INTERNAL_SERVER_ERROR;
+			result.message = "fail";
+			e.printStackTrace();
+		}
+		status= HttpStatus.ACCEPTED;
+        return new ResponseEntity<>(result, status);
+	}
 }

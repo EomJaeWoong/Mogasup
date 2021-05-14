@@ -24,5 +24,9 @@
 	<select id="getNickname" resultType="String">
 		select nickname from user where user_id=#{user_id}
 	</select>
+	
+	<select id="read" resultType="Notice">
+		select * from notice where notice_id=#{notice_id}
+	</select>
   	
 </mapper>

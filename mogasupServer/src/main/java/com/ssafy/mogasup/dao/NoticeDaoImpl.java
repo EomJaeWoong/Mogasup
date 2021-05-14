@@ -38,4 +38,9 @@ public class NoticeDaoImpl implements NoticeDao {
 	public String getNickname(int user_id) {
 		return mapper.getNickname(user_id);
 	}
+
+	@Override
+	public Notice read(int notice_id) {
+		return mapper.read(notice_id);
+	}
 }
