@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 
 public class PhotoList : MonoBehaviour
@@ -44,13 +45,17 @@ public class PhotoList : MonoBehaviour
             yield return www.SendWebRequest();
 
             if(www.isNetworkError || www.isHttpError) {
-            Debug.Log(www.error);
+                Debug.Log(www.error);
             }
+
             else {
                 photo = Instantiate(photoPrefab) as GameObject;
                 Texture myTexture = ((DownloadHandlerTexture)www.downloadHandler).texture;
                 RawImage item = photo.GetComponent<RawImage>();
                 item.texture = myTexture;
+
+                // Object의 이름은 Photh_[가족 id]_[사진_id]
+                item.name = "photo_5_" + i;
 
                 photo.transform.SetParent(scrollRect.content.transform, false); 
             }
