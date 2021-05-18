@@ -34,4 +34,6 @@ public class BoardList : MonoBehaviour
     {
         uiGroup.anchoredPosition = Vector3.down * 2000;
     }
+
+    
 }

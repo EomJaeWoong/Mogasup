@@ -6,6 +6,7 @@ TagManager:
   tags:
   - photo
   - board
+  - game
   layers:
   - Default
   - TransparentFX

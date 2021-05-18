@@ -70,6 +70,14 @@ public class PlayerMovement : MonoBehaviour
             BoardList boardList = nearObject.GetComponent<BoardList>();
             boardList.Enter(this);
         }
+        else if (other.tag == "game")
+        {
+            nearObject = other.gameObject;
+
+            // gamelist script 불러오기
+            GameList gameList = nearObject.GetComponent<GameList>();
+            gameList.Enter(this);
+        }
     }
 
     void OntriggerExit(Collider other) {
@@ -82,6 +90,13 @@ public class PlayerMovement : MonoBehaviour
             // boardlist script 불러오기
             BoardList boardList = nearObject.GetComponent<BoardList>();
             boardList.Exit();
+            nearObject = null;
+        }
+        else if (other.tag == "game")
+        {
+            // gamelist script 불러오기
+            GameList gameList = nearObject.GetComponent<GameList>();
+            gameList.Exit();
             nearObject = null;
         }
     }
