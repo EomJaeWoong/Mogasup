@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ssafy.mogasup.dto.Notice;
@@ -32,7 +33,17 @@ public class NoticeController {
 	
 	@PostMapping(value = "/notice")
 	@ApiOperation(value = "공지 추가", notes = "message 성공  success 실패  fail")
-	public Object insertNotice(@RequestBody Notice notice) {
+	public Object insertNotice(@RequestParam int family_id,@RequestParam int user_id
+			,@RequestParam String name,@RequestParam String content,@RequestParam String date) {
+		Notice notice = new Notice();
+		notice.setDate(date);
+		notice.setFamily_id(family_id);
+		notice.setNotice_id(0);
+		notice.setUser_id(user_id);
+		notice.setName(name);
+		notice.setContent(content);
+		
+		
 		BasicResponse result = new BasicResponse();
 		HttpStatus status;
 		try {
