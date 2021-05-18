@@ -14,11 +14,19 @@ public class BoardItem : MonoBehaviour, IPointerClickHandler
     }
 
     public void OnPointerClick(PointerEventData data){
+        NoticeInfo noticeinfo = data.pointerPress.GetComponentInChildren<NoticeInfo>();
+        Text[] t = uiItem.GetComponentsInChildren<Text>();
+        t[0].text = noticeinfo.title;
+        t[1].text = noticeinfo.content;
+        t[2].text = noticeinfo.nickname;
+        t[3].text = noticeinfo.date;
+
+
         uiItem.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
     }
 
     public void Exit(){
-        uiItem = GameObject.Find("BoardItem");
-        uiItem.GetComponent<RectTransform>().anchoredPosition = Vector3.left * -2000;
+
+        uiItem.GetComponent<RectTransform>().anchoredPosition = Vector3.left * -2000 + Vector3.down * 2000;
     }
 }

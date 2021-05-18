@@ -19,7 +19,7 @@ public class GameList : MonoBehaviour
 
     public void Exit()
     {
-        uiGroup.anchoredPosition = Vector3.down * 2000;
+        uiGroup.anchoredPosition = Vector3.down * 3000;
     }
 
     public void OpenGolfGameBtn()
