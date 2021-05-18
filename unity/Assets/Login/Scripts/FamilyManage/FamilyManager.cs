@@ -115,6 +115,12 @@ public class FamilyManager : MonoBehaviour
     //가족 생성 버튼
     public void CreateFamilyBtn()
     {
+        if(Create_FamilyNameText.text == "")
+        {
+            OpenAlert("가족명을 입력해주세요!");
+            return;
+        }
+
         StartCoroutine(CreateFamilyCo());
     }
 
