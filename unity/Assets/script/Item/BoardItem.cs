@@ -26,7 +26,7 @@ public class BoardItem : MonoBehaviour, IPointerClickHandler
     }
 
     public void Exit(){
-
+        uiItem = GameObject.Find("BoardItem");
         uiItem.GetComponent<RectTransform>().anchoredPosition = Vector3.left * -2000 + Vector3.down * 2000;
     }
 }

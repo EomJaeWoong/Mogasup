@@ -34,9 +34,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if(avatar) {
-            float back = 1f;
-
-            if(v < 0f)  back = -1f;
 
             // 애니메이터에 속도 전달
             avatar.SetFloat("Speed", (h*h+v*v));

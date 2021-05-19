@@ -29,14 +29,17 @@ public class BoardList : MonoBehaviour
     IEnumerator GetBoardListCo()
     {
         // 스크롤 뷰 불러오기
-        ScrollRect scrollRect = GameObject.Find("BoardScroll").GetComponent<ScrollRect>();
+        ScrollRect scrollRect = GameObject.Find("BoardScroll2").GetComponent<ScrollRect>();
         boardPrefab = Resources.Load("Prefabs/boardPrefab") as GameObject;
-        //string url = "http://localhost:8080/notice";
+
+
+        //string url = "http://localhost:8080/notice/" + userController.family_id;
         string url = "http://k4a102.p.ssafy.io:8080/notice/"+userController.family_id;
 
         UnityWebRequest www = UnityWebRequest.Get(url);
 
         yield return www.SendWebRequest();
+        
 
         if (www.error == null)
         {
