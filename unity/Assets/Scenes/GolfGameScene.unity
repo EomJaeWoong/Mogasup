@@ -288,10 +288,10 @@ RectTransform:
   m_Father: {fileID: 1957468142}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.785, y: 0.9225001}
+  m_AnchorMin: {x: 0.6915715, y: 0.9225001}
   m_AnchorMax: {x: 0.97941685, y: 0.98625004}
-  m_AnchoredPosition: {x: 51.100403, y: -1}
-  m_SizeDelta: {x: -101.8009, y: -1.1}
+  m_AnchoredPosition: {x: 103.6004, y: -1}
+  m_SizeDelta: {x: -206.8009, y: -1.1}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &191287379
 MonoBehaviour:
@@ -388,8 +388,7 @@ MonoBehaviour:
   menuBtn: {fileID: 2018300231}
   menuPanel: {fileID: 1792856993}
   container: {fileID: 1205726435}
-  lvlBtnPrefab: {fileID: 4976260389652251756, guid: e44260a648e5b0c4ca18f06396846541,
-    type: 3}
+  lvlBtnPrefab: {fileID: 4976260389652251756, guid: e44260a648e5b0c4ca18f06396846541, type: 3}
 --- !u!1 &323677661
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,10 +421,10 @@ RectTransform:
   m_Father: {fileID: 1957468142}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.785, y: 0.9225001}
+  m_AnchorMin: {x: 0.6915715, y: 0.9225001}
   m_AnchorMax: {x: 0.97941685, y: 0.98625004}
-  m_AnchoredPosition: {x: -86.4, y: -1}
-  m_SizeDelta: {x: -53.2482, y: -1.1}
+  m_AnchoredPosition: {x: -77.5, y: -2}
+  m_SizeDelta: {x: -158.2482, y: -1.1}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &323677663
 MonoBehaviour:
@@ -859,25 +858,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c43c84e062ed9a4b96fdcb6a25de756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballPrefab: {fileID: 5572983978374574789, guid: 29164484c8d97814284015c77f35de23,
-    type: 3}
+  ballPrefab: {fileID: 5572983978374574789, guid: 29164484c8d97814284015c77f35de23, type: 3}
   ballSpawnPos: {x: 0, y: 0.55, z: 0}
   levelDatas:
   - shotCount: 2000
-    levelPrefab: {fileID: 9151569318176113239, guid: 1a98e835830028944a49be86bcbf4158,
-      type: 3}
+    levelPrefab: {fileID: 9151569318176113239, guid: 1a98e835830028944a49be86bcbf4158, type: 3}
   - shotCount: 5
-    levelPrefab: {fileID: 711297267708857532, guid: 7f88a8d989da3864a97c0c6520b61750,
-      type: 3}
+    levelPrefab: {fileID: 711297267708857532, guid: 7f88a8d989da3864a97c0c6520b61750, type: 3}
   - shotCount: 5
-    levelPrefab: {fileID: 718906723722505572, guid: bd59e3fe26794124bbb9de6ac5ecaf67,
-      type: 3}
+    levelPrefab: {fileID: 718906723722505572, guid: bd59e3fe26794124bbb9de6ac5ecaf67, type: 3}
   - shotCount: 5
-    levelPrefab: {fileID: 9151569318176113239, guid: f732f251a96c73e468865d235b8cf285,
-      type: 3}
+    levelPrefab: {fileID: 9151569318176113239, guid: f732f251a96c73e468865d235b8cf285, type: 3}
   - shotCount: 5
-    levelPrefab: {fileID: 9151569318176113239, guid: a5beecb27aac45347b00aea64f9b0b40,
-      type: 3}
+    levelPrefab: {fileID: 9151569318176113239, guid: a5beecb27aac45347b00aea64f9b0b40, type: 3}
 --- !u!1 &479225599
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,7 +981,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -428, y: 214}
+  m_AnchoredPosition: {x: -517, y: 218}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &497658736
@@ -3158,7 +3151,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -428, y: 214}
+  m_AnchoredPosition: {x: -517, y: 218}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2018300233

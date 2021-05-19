@@ -44,7 +44,7 @@ public class PhotoList : MonoBehaviour
 
             yield return www.SendWebRequest();
 
-            if(www.isNetworkError || www.isHttpError) {
+            if(www.error != null) {
                 Debug.Log(www.error);
             }
 
