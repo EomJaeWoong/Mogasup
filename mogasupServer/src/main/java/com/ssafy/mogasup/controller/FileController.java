@@ -43,7 +43,7 @@ public class FileController {
 		BasicResponse result = new BasicResponse();
 		HttpStatus status;
 		result.message = "success";
-		result.result = "http://k4a102.p.ssafy.io/home/ubuntu/backend/MoGasup.zip";
+		result.result = "http://k4a102.p.ssafy.io/backend/MoGasup.zip";
 		status= HttpStatus.ACCEPTED;
 		return new ResponseEntity<>(result, status);
 		

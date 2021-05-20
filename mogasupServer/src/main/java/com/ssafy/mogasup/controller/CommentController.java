@@ -42,7 +42,7 @@ public class CommentController {
 		try {
 			service.saveComment(file, timeurl);
 //			String voice_path="C:/Users/multicampus/Desktop/picture/"+timeurl+".wav";
-			String voice_path="k4a102.p.ssafy.io/home/ubuntu/backend/voice/"+timeurl+".wav";
+			String voice_path="k4a102.p.ssafy.io/backend/voice/"+timeurl+".wav";
 			service.insertComment(user_id, picture_id, voice_path);
 			result.message = "success";
 		} catch (Exception e) {
