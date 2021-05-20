@@ -53,7 +53,7 @@ export default {
           const url = response.data.result;
           const link = document.createElement("a");
           link.href = url;
-          link.setAttribute("download", "MoGaSup.zip");
+          link.setAttribute("download", "MoGasup.zip");
           document.body.appendChild(link);
           link.click();
           console.log(link);

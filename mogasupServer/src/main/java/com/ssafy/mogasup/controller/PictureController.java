@@ -41,7 +41,7 @@ public class PictureController {
 		try {
 			service.saveimage(file,timeurl);
 //			String image_path="C:/Users/multicampus/Desktop/picture/"+timeurl+file.getOriginalFilename();
-			String image_path="k4a102.p.ssafy.io/home/ubuntu/backend/picture/"+timeurl+file.getOriginalFilename();
+			String image_path="k4a102.p.ssafy.io/backend/picture/"+timeurl+file.getOriginalFilename();
 			service.insertImage(family_id, image_path);
 			result.message = "success";
 			result.result = (String) service.getPictureid(family_id);
