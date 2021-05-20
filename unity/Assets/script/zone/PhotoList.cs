@@ -26,16 +26,11 @@ public class PhotoList : MonoBehaviour
         public Result[] result;
     }
 
-    void Start() {
-        StartCoroutine(openList());
-    }
-
     public void Enter(PlayerMovement p)
     {
         player = p;
         
-        StartCoroutine(SetTexture());
-
+        StartCoroutine(openList());
         uiGroup.anchoredPosition = Vector3.zero;
     }
 
@@ -106,6 +101,8 @@ public class PhotoList : MonoBehaviour
                     jsonResult =
                         System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
                     res = JsonUtility.FromJson<Response>(www.downloadHandler.text);
+
+                    StartCoroutine(SetTexture());
                 }
             }
         }
