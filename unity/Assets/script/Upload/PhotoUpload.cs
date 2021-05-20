@@ -11,8 +11,11 @@ public class PhotoUpload : MonoBehaviour
     VistaOpenFileDialog OpenDialog;
     Stream openStream = null;
 
+    UserController userController;
     private void Start()
     {
+        userController = GameObject.Find("UserInfo").GetComponent<UserController>();
+
         OpenDialog = new VistaOpenFileDialog();
         OpenDialog.Filter = "jpg files (*.jpg) |*.jpg|png files (*.png) |*.jpg|All files  (*.*)|*.*";
         OpenDialog.FilterIndex = 3;
@@ -44,7 +47,7 @@ public class PhotoUpload : MonoBehaviour
     IEnumerator Send(string filename)
     {
         WWWForm form = new WWWForm();
-        form.AddField("family_id", 1);
+        form.AddField("family_id", userController.family_id);
         WWW localfile = new WWW(filename);
         string url = "http://k4a102.p.ssafy.io:8080/picture";
         form.AddBinaryData("file", localfile.bytes);
