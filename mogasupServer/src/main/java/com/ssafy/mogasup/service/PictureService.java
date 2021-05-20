@@ -12,4 +12,5 @@ public interface PictureService {
 	public void deleteImage(int picture_id);
 	public List<HashMap<String, String>> listImage(int family_id);
 	public String readImage(int picture_id);
+	public String getPictureid(int family_id);
 }

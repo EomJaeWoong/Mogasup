@@ -23,7 +23,7 @@ public class PhotoUpload : MonoBehaviour
         OpenDialog.FilterIndex = 3;
         OpenDialog.Title = "Image Dialog";
     }
-    
+
     public string FileOpen()
     {
         if (OpenDialog.ShowDialog() == DialogResult.OK)
@@ -38,9 +38,10 @@ public class PhotoUpload : MonoBehaviour
 
     public void Upload()
     {
-        string fileName =  FileOpen();
+        string fileName = FileOpen();
 
-        if(!string.IsNullOrEmpty(fileName)){
+        if (!string.IsNullOrEmpty(fileName))
+        {
             Debug.Log(fileName);
             StartCoroutine(Send(fileName));
         }
@@ -52,23 +53,28 @@ public class PhotoUpload : MonoBehaviour
         form.AddField("family_id", userController.family_id);
         WWW localfile = new WWW(filename);
         string url = "http://k4a102.p.ssafy.io:8080/picture";
+        //string url = "http://localhost:8080/picture";
+
+    
         form.AddBinaryData("file", localfile.bytes);
         // Upload via post request
         var www = UnityWebRequest.Post(url, form);
         // change the method name
         www.method = "POST";
         yield return www.SendWebRequest();
-        if (www.isNetworkError || www.isHttpError)
+        if (www.error != null)
         {
             Debug.Log(www.error);
         }
         else
         {
+            Debug.Log(www.downloadHandler.text);
             Debug.Log("Finished Uploading Screenshot");
         }
     }
 
-    public void DeletePhoto() {
+    public void DeletePhoto()
+    {
         StartCoroutine(delete());
     }
 

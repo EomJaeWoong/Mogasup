@@ -31,7 +31,7 @@ public class Snake : MonoBehaviour
     {
         uimanager = GameObject.Find("SnakeUIManager").GetComponent<SnakeUIManager>();
         tailLength.text = "0";
-        speed = 0.3f;
+        speed = 0.15f;
         // Move the Snake every 300ms
         InvokeRepeating("Move", speed, speed);
     }

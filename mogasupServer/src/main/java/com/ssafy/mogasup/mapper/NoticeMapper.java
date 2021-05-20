@@ -12,4 +12,5 @@ public interface NoticeMapper {
 	public void update(Notice notice);
 	public String getNickname(int user_id);
 	public Notice read(int notice_id);
+	public String getNoticeId(int family_id);
 }

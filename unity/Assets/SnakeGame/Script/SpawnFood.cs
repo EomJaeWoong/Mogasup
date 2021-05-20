@@ -19,7 +19,7 @@ public class SpawnFood : MonoBehaviour
     {
         uimanager = GameObject.Find("SnakeUIManager").GetComponent<SnakeUIManager>();
         // Spawn food every 4 seconds, starting in 3
-        InvokeRepeating("Spawn", 3, 4);
+        InvokeRepeating("Spawn", 1, 2);
     }
 
     void Update()
@@ -32,7 +32,7 @@ public class SpawnFood : MonoBehaviour
             }
             else if (uimanager.status == "resume")
             {
-                InvokeRepeating("Spawn",3, 4);
+                InvokeRepeating("Spawn",1, 2);
                 uimanager.status = "start";
             }
 

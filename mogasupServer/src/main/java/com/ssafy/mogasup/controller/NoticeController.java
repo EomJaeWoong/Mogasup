@@ -43,12 +43,12 @@ public class NoticeController {
 		notice.setName(name);
 		notice.setContent(content);
 		
-		
 		BasicResponse result = new BasicResponse();
 		HttpStatus status;
 		try {
 			service.insert(notice);
 			result.message = "success";
+			result.result = (String) service.getNoticeId(family_id);
 		}catch(Exception e) {
 			status=HttpStatus.INTERNAL_SERVER_ERROR;
 			result.message = "fail";

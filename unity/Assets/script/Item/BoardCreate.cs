@@ -18,7 +18,6 @@ public class BoardCreate : MonoBehaviour
     public RectTransform uiGroup;
     GameObject uiItem;
     UserController userController;
-
     void Start()
     {
         uiItem = GameObject.Find("BoardCreate");
@@ -39,7 +38,7 @@ public class BoardCreate : MonoBehaviour
 
     public void SubmitBtn()
     {
-        if(BoardTitle.text == "" || BoardContent.text == "")
+        if (BoardTitle.text == "" || BoardContent.text == "")
         {
             OpenAlert("공백이 존재합니다!");
             return;
@@ -49,8 +48,8 @@ public class BoardCreate : MonoBehaviour
 
     IEnumerator CreateBoardCo()
     {
-        //string url = "http://localhost:8080/notice";
-        string url = "http://k4a102.p.ssafy.io:8080/notice";
+        string url = "http://localhost:8080/notice";
+        //string url = "http://k4a102.p.ssafy.io:8080/notice";
 
         // formData로 송신
         WWWForm frm = new WWWForm();
@@ -77,7 +76,6 @@ public class BoardCreate : MonoBehaviour
 
             else if (r.message == "success")
             {
-                
                 Exit();
             }
 
@@ -107,3 +105,4 @@ public class BoardCreate : MonoBehaviour
         public string result;
     }
 }
+
