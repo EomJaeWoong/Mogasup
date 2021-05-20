@@ -48,8 +48,8 @@ public class BoardCreate : MonoBehaviour
 
     IEnumerator CreateBoardCo()
     {
-        string url = "http://localhost:8080/notice";
-        //string url = "http://k4a102.p.ssafy.io:8080/notice";
+        //string url = "http://localhost:8080/notice";
+        string url = "http://k4a102.p.ssafy.io:8080/notice";
 
         // formData로 송신
         WWWForm frm = new WWWForm();
@@ -76,6 +76,34 @@ public class BoardCreate : MonoBehaviour
 
             else if (r.message == "success")
             {
+                GameObject boards = GameObject.Find("BoardGroup");
+                var temp = boards.GetComponentsInChildren<Transform>();
+
+                for (int i = 0; i < temp.Length; i++)
+                {
+                    if (temp[i].name.Contains("BoardNone"))
+                    {
+                        Destroy(temp[i].gameObject);
+                    }
+                }
+
+
+                ScrollRect scrollRect = GameObject.Find("BoardScroll2").GetComponent<ScrollRect>();
+                GameObject boardPrefab = Resources.Load("Prefabs/boardPrefab") as GameObject;
+                GameObject board = Instantiate(boardPrefab) as GameObject;
+                board.GetComponentInChildren<Text>().text = BoardTitle.text;
+                board.GetComponentInChildren<NoticeInfo>().notice_id = r.result;
+                board.GetComponentInChildren<NoticeInfo>().title = BoardTitle.text;
+                board.GetComponentInChildren<NoticeInfo>().content = BoardContent.text;
+                board.GetComponentInChildren<NoticeInfo>().date = System.DateTime.Now.ToString("yyyy-MM-dd");
+                board.GetComponentInChildren<NoticeInfo>().user_id = userController.user_id;
+                board.GetComponentInChildren<NoticeInfo>().nickname = userController.nickname;
+
+
+                // 스크롤 뷰에 추가 
+                board.transform.SetParent(scrollRect.content.transform, false);
+
+
                 Exit();
             }
 
@@ -86,6 +114,8 @@ public class BoardCreate : MonoBehaviour
             Debug.Log("error: " + www.error);
         }
     }
+
+
 
     public void OpenAlert(string text)
     {

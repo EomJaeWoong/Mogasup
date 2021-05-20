@@ -78,6 +78,7 @@ public class BoardList : MonoBehaviour
                 {
                     board = Instantiate(boardPrefab) as GameObject;
                     board.GetComponentInChildren<Text>().text = "게시글이 없습니다";
+                    board.name = "BoardNone(Clone)";
                     
 
                     // 스크롤 뷰에 추가 

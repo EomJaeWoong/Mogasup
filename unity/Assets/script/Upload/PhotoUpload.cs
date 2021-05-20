@@ -68,8 +68,17 @@ public class PhotoUpload : MonoBehaviour
         }
         else
         {
-            Debug.Log(www.downloadHandler.text);
-            Debug.Log("Finished Uploading Screenshot");
+            Response r = JsonUtility.FromJson<Response>(www.downloadHandler.text);
+
+            ScrollRect scrollRect = GameObject.Find("PhotoListScroll").GetComponent<ScrollRect>();
+            GameObject photoPrefab = Resources.Load("Prefabs/photoPrefab") as GameObject;
+            GameObject photo = Instantiate(photoPrefab) as GameObject;
+            RawImage item = photo.GetComponent<RawImage>();
+            item.texture = localfile.texture;
+            item.name = "photo_1_" + r.result;
+
+            photo.transform.SetParent(scrollRect.content.transform, false);
+
         }
     }
 
@@ -97,6 +106,16 @@ public class PhotoUpload : MonoBehaviour
             {
                 if (www.isDone)
                 {
+                    GameObject photos = GameObject.Find("PhotoGroup");
+                    RawImage[] temp = photos.GetComponentsInChildren<RawImage>();
+
+                    for (int i = 0; i < temp.Length; i++)
+                    {
+                        if (temp[i].name.Contains(GameObject.Find("picName").gameObject.GetComponent<Text>().text))
+                        {
+                            Destroy(temp[i].gameObject);
+                        }
+                    }
                     isOnLoading = false;
                     jsonResult =
                     System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
@@ -107,4 +126,12 @@ public class PhotoUpload : MonoBehaviour
             }
         }
     }
+
+    [System.Serializable]
+    class Response
+    {
+        public string message;
+        public string result;
+    }
+
 }
