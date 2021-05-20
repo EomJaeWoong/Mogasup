@@ -60,5 +60,10 @@ public class PictureServiceImpl implements PictureService{
 	public String readImage(int picture_id) {
 		return dao.readImage(picture_id);
 	}
+
+	@Override
+	public String getPictureid(int family_id) {
+		return dao.getPictureid(family_id);
+	}
 	
 }

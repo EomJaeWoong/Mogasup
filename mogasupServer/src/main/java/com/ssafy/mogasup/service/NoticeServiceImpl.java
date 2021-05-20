@@ -44,4 +44,9 @@ public class NoticeServiceImpl implements NoticeService {
 	public Notice read(int notice_id) {
 		return dao.read(notice_id);
 	}
+
+	@Override
+	public String getNoticeId(int family_id) {
+		return dao.getNoticeId(family_id);
+	}
 }

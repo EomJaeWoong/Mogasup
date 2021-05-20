@@ -32,4 +32,9 @@ public class PictureDaoImpl implements PictureDao{
 	public String readImage(int picture_id) {
 		return mapper.readImage(picture_id);
 	}
+
+	@Override
+	public String getPictureid(int family_id) {
+		return mapper.getPictureid(family_id);
+	}
 }

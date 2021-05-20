@@ -19,7 +19,7 @@ public class VoiceReply : MonoBehaviour
     public void SoundSlider() {
         progress.value = p;
 
-        p = voice.time / voice.clip.length;
+        p = voice.time / 12f;
         PlayerPrefs.SetFloat("progressmax", p);
     }
 

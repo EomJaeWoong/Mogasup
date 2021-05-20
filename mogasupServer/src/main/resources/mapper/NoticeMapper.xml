@@ -28,5 +28,9 @@
 	<select id="read" resultType="Notice">
 		select * from notice where notice_id=#{notice_id}
 	</select>
+	
+	<select id="getNoticeId" resultType="String">
+		select notice_id from notice where family_id=#{family_id} order by notice_id desc limit 1;
+	</select>
   	
 </mapper>

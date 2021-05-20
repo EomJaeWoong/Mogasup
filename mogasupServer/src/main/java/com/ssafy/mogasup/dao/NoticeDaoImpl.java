@@ -44,4 +44,9 @@ public class NoticeDaoImpl implements NoticeDao {
 	public Notice read(int notice_id) {
 		return mapper.read(notice_id);
 	}
+
+	@Override
+	public String getNoticeId(int family_id) {
+		return mapper.getNoticeId(family_id);
+	}
 }

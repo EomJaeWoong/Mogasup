@@ -34,7 +34,7 @@ public class PictureController {
 		SimpleDateFormat format= new SimpleDateFormat("yyyyMMddHHmmss");
 		Date time = new Date();
 		String timeurl=format.format(time);
-		
+		System.out.println(file.getName());
 		
 		BasicResponse result = new BasicResponse();
 		HttpStatus status;
@@ -44,6 +44,7 @@ public class PictureController {
 			String image_path="k4a102.p.ssafy.io/home/ubuntu/backend/picture/"+timeurl+file.getOriginalFilename();
 			service.insertImage(family_id, image_path);
 			result.message = "success";
+			result.result = (String) service.getPictureid(family_id);
 		} catch (Exception e) {
 			status=HttpStatus.INTERNAL_SERVER_ERROR;
 			e.printStackTrace();
@@ -51,6 +52,7 @@ public class PictureController {
 		status= HttpStatus.ACCEPTED;
         return new ResponseEntity<>(result, status);
 	}
+
 	
 	@DeleteMapping(value = "/picture/{picture_id}")
 	@ApiOperation(value = "사진 삭제")

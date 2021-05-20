@@ -19,4 +19,8 @@
 	<select id="readImage" resultType="String">
 		select image_path from picture where picture_id=#{picture_id}
 	</select>
+	<select id="getPictureid" resultType="String">
+		select picture_id from picture where family_id=#{family_id} order by picture_id desc limit 1;
+	</select>
+	
 </mapper>
