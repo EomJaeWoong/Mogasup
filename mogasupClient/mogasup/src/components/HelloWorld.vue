@@ -30,7 +30,7 @@
 
 <script>
 import axios from "../axios/axios-common";
-
+//import axios from "axios";
 export default {
   data() {
     return {
@@ -42,15 +42,15 @@ export default {
   methods: {
     download() {
       return axios
-        .get("/download", { responseType: "blob" })
+        .get("/download")
         .then(response => {
           this.msg = "다운로드 성공!";
           this.color = "success";
           this.snackbar = true;
           console.log(response.data);
           //const url = window.URL.createObjectURL(new Blob([response.data]));
-          const url =
-            "http://k4a102.p.ssafy.io/home/ubuntu/backend/MoGasup.zip";
+          //const url ="http://k4a102.p.ssafy.io/home/ubuntu/backend/MoGasup.zip";
+          const url = response.data.result;
           const link = document.createElement("a");
           link.href = url;
           link.setAttribute("download", "MoGaSup.zip");
