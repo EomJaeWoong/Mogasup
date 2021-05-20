@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
 using System.Windows.Forms;
 using Ookii.Dialogs;
@@ -10,6 +11,7 @@ public class PhotoUpload : MonoBehaviour
 {
     VistaOpenFileDialog OpenDialog;
     Stream openStream = null;
+    GameObject uiItem;
 
     private void Start()
     {
@@ -61,6 +63,39 @@ public class PhotoUpload : MonoBehaviour
         {
             Debug.Log("Finished Uploading Screenshot");
         }
+    }
 
+    public void DeletePhoto() {
+        StartCoroutine(delete());
+    }
+
+    IEnumerator delete()
+    {
+        string jsonResult;
+        bool isOnLoading = true;
+        string GetDataUrl = "http://k4a102.p.ssafy.io:8080/picture/" + GameObject.Find("picName").gameObject.GetComponent<Text>().text;
+        // string GetDataUrl = "http://localhost:8080//picture/" + GameObject.Find("picName").gameObject.GetComponent<Text>().text;
+        using (UnityWebRequest www = UnityWebRequest.Get(GetDataUrl))
+        {
+            //www.chunkedTransfer = false;
+            www.method = "DELETE";
+            yield return www.Send();
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                if (www.isDone)
+                {
+                    isOnLoading = false;
+                    jsonResult =
+                    System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
+
+                    uiItem = GameObject.Find("PhotoItem");
+                    uiItem.GetComponent<RectTransform>().anchoredPosition = Vector3.left * -2000;
+                }
+            }
+        }
     }
 }
