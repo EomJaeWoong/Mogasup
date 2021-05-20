@@ -12,7 +12,7 @@ public class PhotoList : MonoBehaviour
     PlayerMovement player;
     GameObject photo, photoPrefab;
     Response res;
-
+    UserController userController;
     [System.Serializable]
     public class Result
     {
@@ -24,6 +24,12 @@ public class PhotoList : MonoBehaviour
     {
         public string message;
         public Result[] result;
+    }
+
+    private void Start()
+    {
+        userController = GameObject.Find("UserInfo").GetComponent<UserController>();
+
     }
 
     public void Enter(PlayerMovement p)
@@ -83,7 +89,7 @@ public class PhotoList : MonoBehaviour
     {
         string jsonResult;
         bool isOnLoading = true;
-        string GetDataUrl = "http://k4a102.p.ssafy.io:8080/picture/list/" + 1;
+        string GetDataUrl = "http://k4a102.p.ssafy.io:8080/picture/list/" + userController.family_id;
         // string GetDataUrl = "http://localhost:8080//picture/list/" + 1;
         using (UnityWebRequest www = UnityWebRequest.Get(GetDataUrl))
         {
