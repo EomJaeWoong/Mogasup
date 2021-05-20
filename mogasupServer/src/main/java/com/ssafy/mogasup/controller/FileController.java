@@ -26,7 +26,8 @@ public class FileController {
 	
 	@GetMapping(value = "/download")
 	@ApiOperation(value = "실행파일 다운로드")
-	public Object DownloadFile() throws Exception{/*
+	public Object DownloadFile() throws Exception{
+		/*
 		Path path = Paths.get("D:/MoGasup.zip");
 //		Path path = Paths.get("k4a102.p.ssafy.io/home/ubuntu/backend/MoGasup.zip");
 		String contentTpye = Files.probeContentType(path);
@@ -40,8 +41,11 @@ public class FileController {
 		Resource resource = new InputStreamResource(Files.newInputStream(path));
 		return new ResponseEntity<>(resource,headers,HttpStatus.OK);*/
 		BasicResponse result = new BasicResponse();
+		HttpStatus status;
 		result.message = "success";
-		return result;
+		result.result = "http://k4a102.p.ssafy.io/home/ubuntu/backend/MoGasup.zip";
+		status= HttpStatus.ACCEPTED;
+		return new ResponseEntity<>(result, status);
 		
 	}
 	
