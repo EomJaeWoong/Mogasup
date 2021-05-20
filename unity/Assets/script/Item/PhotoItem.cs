@@ -24,6 +24,7 @@ public class PhotoItem : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData data){
         string[] token = data.pointerPress.name.Split('_');
         picName = token[2];
+        GameObject.Find("picName").GetComponent<Text>().text = token[2];
         uiItem.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
 
         StartCoroutine(open());
