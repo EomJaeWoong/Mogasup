@@ -1,0 +1,12 @@
+package com.ssafy.mogasup.mapper;
+
+import java.util.HashMap;
+import java.util.List;
+
+public interface PictureMapper {
+	public void insertImage(int family_id, String image_path);
+	public void deleteImage(int picture_id);
+	public List<HashMap<String, String>> listImage(int family_id);
+	public String readImage(int picture_id);
+	public String getPictureid(int family_id);
+}
