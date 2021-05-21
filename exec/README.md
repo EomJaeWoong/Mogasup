@@ -59,10 +59,10 @@
 # :page_facing_up: 프로젝트 세팅 방법
 
 ## Front-End
-  - Unity
+  - **Unity**
     1. Unity Hub에서 버전 2020.3.4f1 설치
     2. Unity Hub에 폴더 exec/unity 추가 후 실행
-  - Vue.js
+  - **Vue.js**
     1. cd exec/mogasupClient/mogasup
     2. yarn install
     3. yarn run serve
