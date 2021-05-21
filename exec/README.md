@@ -40,17 +40,17 @@
 
 #  :house_with_garden:실행 화면
 
-<img src="./image/play1.png"></img>
+<img src="./image/play1.PNG"></img>
 
-<img src="./image/play2.png"></img>
+<img src="./image/play2.PNG"></img>
 
-<img src="./image/play3.png"></img>
+<img src="./image/play3.PNG"></img>
 
-<img src="./image/play4.png"></img>
+<img src="./image/play4.PNG"></img>
 
-<img src="./image/play5.png"></img>
+<img src="./image/play5.PNG"></img>
 
-<img src="./image/play6.png"></img>
+<img src="./image/play6.PNG"></img>
 
 
 
@@ -58,7 +58,7 @@
 
 # :page_facing_up: 프로젝트 세팅 방법
 
-- [ ] Front-End
+## Front-End
   - Unity
     1. Unity Hub에서 버전 2020.3.4f1 설치
     2. Unity Hub에 폴더 exec/unity 추가 후 실행
@@ -66,11 +66,11 @@
     1. cd exec/mogasupClient/mogasup
     2. yarn install
     3. yarn run serve
-- [ ] Back-End
+## Back-End
   1. BackEnd.zip Unzip
   2. pom.xml 파일을 /mogasupServer 로 이동
   3. application.properties 파일을 /mogasupServer/src/main/resources 로 이동
   4. STS 에서 mogasupServer 디렉토리 추가
   5. Rus As -> Spring Boot Application으로 실행
-- [ ] DB
+## DB
   1. A102Dump.zip 를 UnZip하여 DB 설정
