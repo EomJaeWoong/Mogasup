@@ -38,7 +38,7 @@
 
 <img src="./image/flow.JPG"></img>
 
-#  :house_with_garden:실행 화면
+# :house_with_garden: 실행 화면
 
 <img src="./image/play1.gif"></img>
 
