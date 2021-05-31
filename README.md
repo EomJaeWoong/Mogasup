@@ -40,16 +40,12 @@
 
 #  :house_with_garden:실행 화면
 
-<img src="./image/play1.PNG"></img>
+<img src="./image/play1.gif"></img>
 
-<img src="./image/play2.PNG"></img>
+<img src="./image/play2.gif"></img>
 
-<img src="./image/play3.PNG"></img>
+<img src="./image/play3.gif"></img>
 
-<img src="./image/play4.PNG"></img>
-
-<img src="./image/play5.PNG"></img>
-
-<img src="./image/play6.PNG"></img>
+<img src="./image/play4.gif"></img>
 
 
